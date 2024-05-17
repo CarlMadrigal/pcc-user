@@ -1,0 +1,2515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap');
+
+/*--------------------------------------SIDE BAR-------------------------------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--font-color);
+    letter-spacing: 1px;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+
+    --primary-color: #29387C;
+    --secondary-color: #4B60BD;
+    --accent-color: #FEF200;
+    --base-color: #002768;
+    --background-color: rgba(134, 144, 233, 0.15);
+    --shadow: 0px 2px 10px -2px rgba(0, 4, 255, 0.070);
+    --shadow2: 0px 10px 15px -3px rgba(0, 4, 255, 0.070);
+    --active-background: rgba(134, 144, 233, 0.10);
+    --active: rgb(255, 255, 255);
+
+    --font-size: 1rem;
+    --font-color: #333333;
+    --gap: 20px;
+
+    --radius: 2rem;
+    --border: 2px solid rgba(134, 144, 233, 0.25);
+
+    --transition: 0.3s ease;
+}
+
+p{
+    font-size: var(--font-size);
+    color: var(--font-color)S;
+}
+
+.material-symbols-rounded{
+    color: var(--font-color);
+}
+
+body{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    width: 100%;
+    height: 100vh;
+    background: var(--background-color);
+}
+button{
+    border: none;
+}
+/* Navigational Bar */
+
+.sidebar{
+    background: #29387C;
+    width: 330px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow2);
+    /* justify-content: space-between; */
+}
+
+/* Logo */
+.sidebar .logo{
+    width: 275px;
+    
+}
+
+/* User Profile*/
+.sidebar .user{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.sidebar .user .profile-pic{
+    width: 130px;
+    border-radius: 100px;
+    padding: 3px;
+    border: 5px solid var(--active)
+}
+
+.sidebar .user h2{
+    font-weight: 600;
+    color: white;
+    font-family: 25px;
+}
+
+/* Controls */
+
+/* .material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+} */
+
+.sidebar .buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+
+}
+
+.buttons a{
+    color: rgb(255, 255, 255);
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-weight: 400;
+    gap: 20px;
+    padding: 15px 0 15px 38px;
+    border-left: 6px solid rgba(0, 0, 255, 0);
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.buttons a p{
+    font-size: 15px;
+}
+
+
+
+.buttons span{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    /* color: #6a6a6a; */
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.buttons #count{
+    position: absolute;
+    right: 20px;
+    /* top: 5px; */
+    background-color: rgb(255, 0, 119);
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    padding: 0 2px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    border-radius: 8px;
+    letter-spacing: 0;
+    /* box-shadow:  0px 3px 5px 2px rgba(1, 2, 59, 0.097); */
+}
+
+/* Active */
+.buttons .active{
+    color: var(--active);
+    font-weight: 600;
+    background-color: var(--active-background);
+    border-left: 6px solid var(--active);
+    transition: var(--transition);
+}
+
+.buttons .active-icon{
+    color: var(--active);
+    transition: var(--transition);
+
+}
+
+.buttons a:hover :where(p, span){
+    color: var(--active);
+
+}
+
+
+
+
+/* Main Content */
+.container{
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: center;
+    gap: 20px;
+    padding: 5px 20px 20px;
+    border-radius: 20px;
+    box-shadow: var(--shadow2);
+}
+
+/* Head */
+.head{
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+.head h1{
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 50px;
+}
+.head .head-control{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: max-content;
+}
+.head-control .search{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.head-control .search input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 40px 5px 15px;
+    outline: none;
+    border: none;
+    background-color: white;
+    border: var(--border);
+    border-radius: 100px;
+    height: 50px;
+    width: 110px;
+    transition: var(--transition);
+}
+.head-control .search span{
+    position: absolute;
+    right: 10px;
+}
+.head-control .search input:focus{
+    width: 100%;
+    border: 2px solid var(--secondary-color);
+    box-shadow: var(--shadow2);
+}
+
+
+.head-control a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 100px;
+    gap: 8px;
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+}
+
+.head-control a span{
+    color: white;
+}
+
+
+button:hover{
+    transform: scale(1.03);
+}
+
+/*Content*/
+.news{
+    width: 100%;
+    height: fit-content;
+    padding: 0 30px;
+}
+.news h2{
+    color: var(--font-color);
+    font-weight: 600;
+    font-size: 25px;
+        
+}
+.news .discover{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+.news .discover img{
+    width: 32.8%;
+
+}
+.news .discover img:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+
+
+}
+.home-ctrls{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: fit-content;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px;
+}
+.home-ctrls > div{
+    flex: 1 0 300px;
+    min-width: 40%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.home-ctrls div > .material-symbols-rounded{
+    font-size: 50px;
+    color: var(--primary-color);
+}
+
+.home-ctrls div > div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.home-ctrls div > span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.home-ctrls div > span h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--base-color);
+}
+.home-ctrls div > div button{
+    padding: 15px 40px;
+    background-color: #002768;
+    border-radius: 12px;
+}
+.home-ctrls div > div button a{
+    color: white;
+}
+.home-ctrls button:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+
+/* ----------------------- Carabao's ----------------------- */
+
+.MCH h1{
+    color: var(--font-color);
+    font-weight: 600;
+    font-size: 25px;
+    padding: 0 30px;
+}
+.carabaos{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Carabao Container */
+
+.carabaos .carabao-con{
+    position: relative;
+    flex: 1 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 341px;
+    max-height: 300px;
+    background-color: white;
+    border-radius: 15px;
+    border: var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.carabaos .carabao-con:hover{
+    scale: 1.02;
+}
+
+.carabao-con .color{
+    display: flex;
+    justify-content: end;
+    padding: 15px 5px;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primary-color);
+}
+
+.color span{
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}
+
+.carabao-con .carabao-profile{
+    position: absolute;
+    top: 70px;
+    width: 110px;
+    border-radius: 50px;
+    box-shadow: var(--shadow2);
+}
+
+.carabao-con .carabao-details{
+    position: relative;
+    top: 20%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+
+}
+
+.carabao-con .carabao-details h2{
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--font-color);
+}
+
+.carabao-con .carabao-details h3{
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--font-color);
+}
+
+
+/* ----------------------- Notifications ----------------------- */
+.notification{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    gap: 10px;
+    padding: 30px;
+    /* background-color: var(--active-background); */
+}
+
+#filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(222, 222, 239);
+    color: var(--font-color);
+    border-radius: 100px;
+    gap: 8px;
+    height: 50px;
+    width: auto;
+    transition: var(--transition);
+    
+}
+
+#filter span{
+    color: var(--font-color);
+}
+
+.notification .notif{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    gap: 20px;
+    background-color: rgba(134, 144, 233, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.notification .notif img{
+    border-radius: 100px;
+
+}
+.notification .notif .notif-details{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+}
+
+.notification .notif .notif-details p{
+    text-align: left;
+    width: 100%;
+}
+.notification .notif .notif-details h3{
+    font-size: 25px;
+    font-weight: 600;
+}
+.notification .notif .notif-details #time{
+    font-size: 15px;
+    color: gray;
+}
+
+.notification .notif #close{
+    outline: none;
+    border: none;
+    width: auto;
+    height: auto;
+    background-color: #00266800;
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.notification .notif:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    background-color: rgba(134, 144, 233, 0.3);
+    box-shadow: var(--shadow2);
+}
+
+
+/* ----------------------- Help Center ----------------------- */
+
+/*-- Main Content --*/
+
+.help-center .helpControls .helpCont .material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.help-center{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: url(../home-images/background1.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    overflow: hidden;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.headControl{
+    display: flex;
+    gap: 20px;
+    height: fit-content;
+    align-items: center;
+    width: 100%;
+    padding: 40px 40px 0 40px;
+
+
+}
+.headControl span{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 25px;
+    color: var(--active);
+}
+.headControl span h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--active);
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.helpSearch{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.helpSearch h2{
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+}
+.helpSearch .helpSearchBar{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+}
+.helpSearch .helpSearchBar input[type='text']{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0);
+    color: white;
+    font-size: 16px;
+    padding: 10px 45px 10px 15px;
+    width: 300px;
+    border-radius: 100px;
+    outline: none;
+    transition: var(--transition);
+}
+.helpSearch .helpSearchBar input[type='text']:focus{
+    border: 1px solid#ffffff;
+   
+}
+.helpSearch .helpSearchBar input[type='text']::placeholder{
+    color: white;
+}
+.helpSearch .helpSearchBar span{
+    position: absolute;
+    right: 630px;
+    color: white;
+}
+
+.help-center .helpControls{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 40px;
+    gap: 30px;
+}
+.help-center .helpControls .helpCont{
+    flex: 1 0 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+.help-center .helpControls .helpCont span{
+    font-size: 100px;
+    color: white;
+    font-weight: 300;
+}
+.help-center .helpControls .helpCont h3{
+    font-weight: 500;
+    color: white;
+}
+
+.help-center .qs{
+    width:100%;
+    padding: 0 50px;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--active);
+}
+
+.help-center .foot{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--active);
+}
+.help-center .foot h4{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--active);
+}
+.help-center .foot p{
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--active);
+}
+
+.help-center .foot img{
+    width: 250px;
+}
+
+.help-center .foot hr{
+    width: 28%;
+    border-width:1px;
+    opacity: 0.3;
+}
+
+.help-center .foot p a{
+    color: var(--secondary-color);
+    text-decoration: underline;
+
+
+}
+
+.help-center .foot span{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 20px;
+    color: var(--active);
+    padding: 20px 20px;
+}
+
+.help-center .foot span h2{
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--active);
+
+}
+
+.help-center .helpCont:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow2);
+}
+
+
+/* ----------------------- My profile css ----------------------- */
+
+/*--head--*/
+.profileHead{
+    border-radius: 20px;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url(../home-images/background.png);
+    display: flex;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 30px 15px 30px;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: 0px -300px;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 30px;
+}
+.profileHead .headTop{
+    display: flex;
+    align-items: center;
+    height: max-content;
+    justify-content: space-between;
+    width: 100%;
+}
+.profileHead .headTop .myAccountTop{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: max-content;
+}
+.profileHead .headTop .myAccountTop h3, .myAccountTop span, .carabao span{
+    color: #ffffff;
+}
+.profileHead .headTop .carabao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: max-content;
+    justify-content: flex-end;
+    
+}
+.profileHead .myAccount{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    gap: 30px;
+    padding-left: 100px;
+    padding-bottom: 10px;
+}
+.profileHead .userAccount{
+    display: flex;
+    height: 100%;
+    width: 90%;
+    gap: 20px;
+}
+
+.profileHead .myAccount .userAccount .profilePic img{
+    display: flex;
+    border-radius: 50%;
+    width: 113.18px;
+    height: 114.77px;
+    position: relative;
+}    
+.profileHead .userAccount .myInfo{
+    display: flex;
+    width: fit-content;
+    height: max-content;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    justify-content: space-between;    
+    gap: 5px;
+}
+.myInfo h1{
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 100%;
+}
+.myInfo h2{
+    color: var(--active);
+    text-align: left;
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 300;
+    position: relative;
+}
+.qr{
+    display: flex;
+    width: 100;
+    height: 100%;
+    padding-top: 30px;
+}
+.qr img{
+    display: flex;
+    width: 60px;
+    height: 60px;
+}
+.accountDetails, .contracts{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+
+}
+.accountDetails h2, .accountDetails span {
+    color: var(--font-color);
+}
+.accountDetails .button h4, .contracts .button h4{
+    color: var(--font-color);
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+}
+.accountDetails .button, .contracts .button{
+    display: flex;
+    font-weight: 600;
+    font-size: 25px;
+    gap: 7px;
+    width: fit-content;
+}
+.accountDetails .button .material-symbols-rounded, .contracts .button .material-symbols-rounded{
+    display: flex;
+    gap: 10px;
+}
+.accountDetails2{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    background-color: #002768;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 20px 20px;
+    gap: 10px;
+}
+.accountDetails2 .material-symbols-rounded{
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 30px;
+}
+.accountDetails2 h3{
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 500;
+}
+.contract{
+    display: flex;
+    height: max-content;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+.contractInfo{
+    box-shadow: var(--shadow2);
+    border-radius: 15px;
+    height: max-content;
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+}
+.contractInfo .material-symbols-rounded{
+    display: flex;
+    color: var(--font-color);
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    font-size: 40px;
+    width: fit-content;
+}
+.contractInfo .material-symbols-rounded h3{
+    font-size: 15px;
+    color: var(--font-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.contractInfo h3{
+    font-size: 15px;
+    color: var(--font-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+}
+
+.appointment{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+.appointment .Appoint{
+    display: flex;
+    padding: 0 20px;
+}
+.appointmentInfo{
+    box-shadow: var(--shadow2);
+    border-radius: 15px;
+    height: max-content;
+    width: 100%;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+}
+.appointmentInfo .material-symbols-rounded{
+    display: flex;
+    color: var(--font-color);
+    align-items: center;
+    gap: 10px;
+    padding: 20px 30px;
+    font-size: 40px;
+    width: fit-content;
+}
+.appointmentInfo .material-symbols-rounded h3{
+    font-size: 15px;
+    color: var(--font-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.appointmentInfo h3{
+    font-size: 15px;
+    color: var(--font-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+    justify-items: center;
+}
+.appointment .appointmentInfo:hover, .contract .contractInfo:hover{
+    scale: 1.01;
+}
+
+
+/* ----------------------- About Us ----------------------- */
+
+/* banner */
+.container .pcc-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: azure;
+    color: #fff;
+    width: 100%;
+    height: 25rem;
+    background: url(../home-images/pcc-banner.png) no-repeat;
+    background-position: 0px -120px;
+    background-size: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin: 1rem 0;
+}
+
+.pcc-banner .banner-content{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin-left: 7rem;
+    gap: 1rem;
+    height: fit-content;
+}
+
+.pcc-banner .banner-content h1{
+    color: var(--accent-color);
+    font-size: 3.5rem;
+}
+.pcc-banner .banner-content p{
+    position: relative;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0 2rem;
+}
+.pcc-banner .banner-content p::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .4rem;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+}
+.pcc-banner .banner-content a{
+    background-color: var(--accent-color);
+    backdrop-filter: blur(10px);
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    width: fit-content;
+    padding: 1rem 3rem;
+    color: var(--font-color);
+    font-weight: 600;
+    border-radius: 0 10rem 10rem 10rem;
+    transition: var(--transition);
+}
+.pcc-banner .banner-content a:hover{
+    color: var(--text-color);
+    background-color: #fff;
+    border-radius: 10rem;
+    transform: scale(1.1);
+    /* box-shadow: 0 7.5px 30px 3px rgba(250, 210, 32, 0.51); */
+    box-shadow: 0 11.5px 26.5px 0 rgba(0, 0, 0, 0.39);
+}
+.AboutUs{
+    padding: 0 0 0 30px;
+}
+.AboutUs h1{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+
+}
+.AboutUs .mandate h2{
+    color: var(--font-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.AboutUs .mandate p{
+    color: var(--font-color);
+    font-size: 1.1rem;
+}
+.AboutUs .vission h3{
+    color: var(--font-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.AboutUs .vission p{
+    color: var(--font-color);
+    font-size: 1.1rem;
+}
+.AboutUs .mission h4{
+    color: var(--font-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.AboutUs .mission p{
+    color: var(--font-color);
+    font-size: 1.1rem;
+}
+
+/*--------------------------------------Learning Materials-------------------------------------- */
+.mats-content{
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* LRNM Container */
+.mats-content .mats-con{
+    position: relative;
+    flex: 1 0 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 45%;
+    max-width: 49%;
+    max-height: 365px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    border: var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.mats-con:hover{
+    transform: scale(1.03);
+    box-shadow: var(--shadow2);
+ }
+
+.mats-content .mats-con img{
+    width: 400px;
+}
+
+.mats-content .mats-con h2{
+    font-weight: 600;
+    font-size: 25px;
+    transition: var(--transition);
+}
+
+.mats-con:hover h2{
+   font-weight: 700;
+   color: var(--primary-color);
+}
+
+/*  ----------------------- File Container ----------------------- */
+
+
+.file-con{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: start;
+    gap: 30px;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.file-con .files{
+    flex: 1 0 300px;
+    max-width: 323px;
+    display: flex;
+    flex-direction: column;
+    height: 348px;
+    justify-content: center;
+    background-color: rgba(134, 144, 233, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 30px;
+    gap: 20px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.file-con .files img{
+    width: 250px;
+}
+.file-con .files .file-details{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.file-con .files .file-details p{
+    font-size: 16px;
+    text-align: justify;
+}
+.file-con .files:hover{
+    scale: 1.04;
+    box-shadow: var(--shadow2);
+    background-color: rgba(134, 144, 233, 0.3);
+}
+
+
+/*--------------------------------------Contracts-------------------------------------- */
+.contracts-content{
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* LRNM Container */
+.contracts-content .contracts-con{
+    position: relative;
+    flex: 1 0 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 45%;
+    max-width: 49%;
+    max-height: 365px;
+    height: auto;
+    background-color: white;
+    border-radius: 15px;
+    border: var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.contracts-con:hover{
+    transform: scale(1.03);
+    box-shadow: var(--shadow2);
+ }
+
+.contracts-content .contracts-con img{
+    width: 400px;
+}
+
+.contracts-content .contracts-con h2{
+    font-weight: 600;
+    font-size: 25px;
+    transition: var(--transition);
+}
+
+.contracts-con:hover h2{
+   font-weight: 700;
+   color: var(--primary-color);
+}
+
+/* ----------------------- myCarabao CSS ----------------------- */
+.content{
+    position: relative;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* Cooperative Container */
+.content .carabao-con{
+    position: relative;
+    flex: 1 0 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 440px;
+    height: 375px;
+    background-color: white;
+    border-radius: 15px;
+    border: var(--border);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.content .carabao-con:hover{
+    scale: 1.02;
+    
+}
+
+.carabao-con .color{
+    display: flex;
+    justify-content: end;
+    padding: 15px 5px;
+    width: 100%;
+    height: 40%;
+    background-color: var(--primary-color);
+}
+
+.color span{
+    font-size: 45px;
+    font-weight: 900;
+    color: white;
+}
+
+.carabao-con .carabao-profile{
+    position: absolute;
+    top: 23.3%;
+    width: 120px;
+    border-radius: 150px;
+    box-shadow: var(--shadow2);
+}
+
+.carabao-con .carabao-details{
+    position: relative;
+    top: 24.5%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+
+.carabao-con .carabao-details h2{
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.carabao-con .carabao-details h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* ----------------------- Carabao CSS ----------------------- */
+
+/*--head--*/
+
+.chead{
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 15px 30px 15px 30px;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url(../home-images/background.png);
+    background-size: cover;
+    background-position: 0px -300px;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.chead .top{
+    display: flex;
+    align-items: center;
+    height: max-content;
+    justify-content: space-between;
+    width: 100%;
+}
+.chead .top .mycarabao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: max-content;
+}
+.chead .top .mycarabao h3, .mycarabao span, .edit span{
+    color: #ffffff;
+}
+.chead .top .edit{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    height: max-content;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.chead .top .edit h4{
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 15px;
+    font-weight: 100;
+}
+.chead .cinfo{
+    display: flex;
+    width: fit-content;
+    height: max-content;
+    align-self: center;
+    align-items: center;
+    width: 60%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    justify-content: space-between;    
+    gap: 30px;
+}
+.cinfo img{
+    position: flex;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50%;
+    width: 113.18px;
+    height: 114.77px;
+    position: relative;
+
+}
+.cinfos{
+    display: flex;
+    width: fit-content;
+    height: max-content;
+    width: 100%;
+    justify-content: space-between;
+}
+.cinfo2, .cinfo3{
+    display: flex;
+    width: fit-content;
+    height: max-content;   
+    flex-direction: column;
+    gap: 5px;
+    
+}
+.cinfo3{
+    gap: 7px;
+}
+.cinfo h1{
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 25px;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 500;
+}
+.cinfo h2{
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 300;
+    position: relative;
+}
+.cinfo h3{
+    text-align: center;
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 300;
+    position: relative;
+    color: #ffffff;
+    background-color: #f5bc2b;
+    border-radius: 40px;
+    padding: 5px 3px 5px 3px;
+}
+.cinfo3 h1{
+    color: #ffffff;
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: 'Poppins-SemiBold', sans-serif;
+    font-size: 25px;
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 500;
+}
+.cinfo3 h2{
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 300;
+    position: relative;
+}
+.cinfo3 h4{
+    color: #ffffff;
+    text-align: left;
+    font-family: 'Poppins-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 100%;
+    font-weight: 300;
+    position: relative;
+}
+.cinfo3 a{
+    font-weight: 300;
+    padding-left: 5px;
+    padding-top: 4px;
+    font-size: 15px;
+    color: #ffffffa0;
+}
+
+/*-- c needs --*/
+
+.carabao-info{
+    display: flex;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+    align-self: center;
+    gap: 20px;
+    overflow-x: hidden;
+}
+
+.carabao-info > div{
+    background: #ffffff;
+    border: 2px solid #eceef6;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;    
+    height: 100%;
+    box-shadow: var(--shadow2);
+    overflow: hidden;
+    overflow-y: auto;
+    
+}
+
+.carabao-info > div .needs{
+    color: #002768;
+    background-color: #fff;
+    box-shadow: var(--shadow2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #eceef6;
+    padding: 20px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.carabao-info div > .needs :where(h3){
+    display: flex;
+    color: #002768;
+    font-weight: 600;
+    font-size: 25px;
+    gap: 7px;
+}
+.carabao-info div > .needs :where(span, h4){
+    display: flex;
+    color: #002768;
+    font-weight: 500;
+    font-size: 18px;
+    gap: 7px;
+}
+.carabao-info div > .needs div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+}
+
+/* -- scroll bar -- */
+
+.carabao-info > div::-webkit-scrollbar {
+    width: 0;
+}
+
+/* -- reminders -- */
+
+.reminders{
+    width: 100%;
+    height: 100%;
+    /* background-color: #4e596f; */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+.reminders .tasks{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+.reminders .taskInfo:hover{
+    scale: 1.03;
+}
+
+.reminders .tasks .checkbox, .reminders .tasks .checkbox1, .reminders .tasks .checkbox2, .reminders .tasks .checkbox3{
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: var(--shadow2);
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+}
+
+.checkbox1,
+.checkbox2,
+.checkbox3,
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px; 
+    height: 20px; 
+    cursor: pointer;
+}
+
+.checkbox1 label,
+.checkbox2 label,
+.checkbox3 label,
+.checkbox label {
+    display: block;
+}
+
+.checkbox1 label span,
+.checkbox2 label span,
+.checkbox3 label span,
+.checkbox label span {
+    display: none;
+}
+
+.checkbox1.checked label span,
+.checkbox2.checked label span,
+.checkbox3.checked label span,
+.checkbox.checked label span {
+    display: inline-block;
+}
+
+.reminders .tasks .checkbox span{
+    margin: auto;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgba(41, 176, 29, 1.00);
+}
+.reminders .tasks .taskInfo{
+    background: linear-gradient(90deg, rgba(41, 176, 29, 1.00) 0%, rgba(75, 62, 16, 0.60) 100%);
+    padding: 15px 20px;
+    border-radius: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 10px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+
+}
+.taskInfo h4{
+    color: #fff;
+}
+.taskInfo div{
+    cursor: pointer;
+    width: 60%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.amount{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;  
+}
+.quant{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: left;
+    color: #ffffff;
+}
+.time, .time span{
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    gap: 10px;
+}
+.amount h5, .amount h6, .quant h5, .quant h6{
+    text-align: left;
+    width: 100%;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+.taskInfo img{
+    height: 100px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    filter: drop-shadow(0 12.5px 16px -2px rgb(165, 165, 165));
+}
+.reminders .tasks .water{
+    background: linear-gradient(90deg, rgba(33, 158, 208, 1.00) 0%, rgba(10, 76, 123, 0.60) 100%);    
+    padding: 15px 20px;
+    border-radius: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 10px;
+    color: #ffffff;
+}
+.water img{
+    height: 115px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    filter: drop-shadow(0 12.5px 16px -2px rgb(57, 57, 57));
+}
+.reminders .tasks .checkbox1 span{
+    margin: auto;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgba(33, 158, 208, 1.00);
+}
+.reminders .tasks .milk{
+    background: linear-gradient(90deg, rgba(255, 122, 0, 1.00) 0%, rgba(243, 157, 27, 0.66) 100%);
+    padding: 15px 20px;
+    border-radius: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 10px;
+    color: #ffffff;
+}
+.milk img{
+    height: 120px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    top: -15px;
+    right: 30px;
+    filter: drop-shadow(0 12.5px 16px -2px rgb(57, 57, 57));
+}
+.reminders .tasks .checkbox2 span{
+    margin: auto;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgba(255, 122, 0, 1.00);
+}
+.reminders .tasks .vitamin{
+    background: linear-gradient(90deg, rgba(110, 36, 184, 1.00) 0%, rgba(64, 165, 221, 1.00) 100%);
+    padding: 15px 20px;
+    border-radius: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 10px;
+    color: #ffffff;
+}
+.vitamin img{
+    height: 120px;
+    width: auto;
+    display: flex;
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    filter: drop-shadow(0 12.5px 16px -2px rgb(57, 57, 57));
+}
+.reminders .tasks .checkbox3 span{
+    margin: auto;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgba(110, 36, 184, 1.00);
+}
+
+/* -- baby -- */
+
+
+.baby{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    gap: 40px;
+    border-bottom: var(--border);
+}
+.babyProf img{
+    display: flex;
+    height: auto;
+    width: 150px;
+}
+.babyDetails{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.babyProf{
+    flex-direction: column;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-top: 30px;
+}
+.babyInfo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+}
+.centerLine{
+    width: 2px;
+    height: 80%;
+    background-color: #002768;
+}
+.babyCategory{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    gap: 20px;
+    justify-content: center;
+}
+.babyContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 20px;
+    justify-content: center;
+}
+.babyCategory h2{
+    width: 100%;
+    height: auto;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.babyContent h2{
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 20px;
+}
+.baby a{
+    padding: 15px 20px;
+    background-color: #002768;
+    color: #ffffff;
+    border-radius: 15px;
+    
+}
+#status{
+    background-color: rgba(23, 217, 78, 0.24);
+    border-radius: 40px;
+    padding: 10px 15px;
+    color: var(--font-color);
+    font-weight: 500;
+}
+
+/* ----- popup input ----- */
+
+.popupInput{
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.popupContent .carabaoContent{
+    gap: 5px;
+}
+.popupContent .editBaby .editBabyContent {
+    width: fit-content;
+    gap: 4px;
+    height: 140px;
+}
+.popupContent .editBaby .editBabyInfo .editBabyCategory{
+    gap: 4px;
+    width: 140px;
+}
+.popupContent .carabaoContent .editable, .popupContent .editBaby .editBabyContent .editable{
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+    width: fit-content;
+}
+.popupEditmyCarabao .popupContent{
+    align-content: center;
+}
+#saveChangesButton{
+    text-align: center;
+    background-color: #002768;
+    color: #ffffff;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 0 220px;
+}
+.popupTop {
+    padding-left: 30px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.popupTop input{
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+}
+#sltstatus{
+    font-size: 15px;
+    font-weight: bold;
+    color: maroon;
+    border-radius: 50px;
+    background-color: transparent;
+}
+#healthy, #babyhealthy{
+    background-color: rgba(23, 217, 78, 0.5);
+}
+#pregnant, #babypregnant{
+    background-color: rgba(217, 214, 23, 0.5);
+}
+#sick, #babysick{
+    background-color: rgba(211, 23, 217, 0.5);
+}
+#dead, #babydead{
+    background-color: rgba(217, 23, 23, 0.5);
+
+}
+
+/* ------------------------------- popup --------------------------------- */
+
+.popupEditmyCarabao{
+    position: absolute;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 2;
+}
+.popupContent{
+    height: fit-content;
+    width: 600px;
+    background: #fff;
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 15px;
+    position: relative;
+
+}
+.popupTop{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+.popupTop h1{
+    font-size: 25px;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    padding-left: 35px;
+}
+.popupTop span{
+    height: max-content;
+    font-size: 35px;
+}
+.carabaoProf{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.carabaoProf img{
+    display: flex;
+    height: 150px;
+    width: 150px;
+}
+.carabaoProf h2 {
+    font-size: 20px;
+}
+.carabaoProf h3{
+    font-size: 15px;
+}
+.carabaoProf .material-symbols-rounded{
+    color: var(--font-color);
+    align-items: center;
+    display: flex;
+    padding-left: 5px;
+    font-size: 22px;
+
+}
+.carabaoProf h4{
+    display: flex;
+    background-color: #f5bc2b;
+    border-radius: 40px;
+    padding: 5px 15px;
+    color: var(--font-color);
+    font-weight: 500;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+.carabaoInfo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 40px;
+
+}
+
+.carabaoCategory{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    gap: 5px;
+    justify-content: center;
+}
+.carabaoContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 5px;
+    justify-content: center;
+}
+.carabaoCategory h2{
+    width: 100%;
+    height: auto;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.carabaoContent h2{
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.editBaby{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+.editBabyProf img{
+    display: flex;
+    height: 100px;
+    width: 100px;
+}
+.editBabyDetails{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+.editBabyProf{
+    flex-direction: column;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-top: 30px;
+}
+.editBabyInfo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+}
+.centerLine{
+    width: 2px;
+    height: 80%;
+    background-color: #002768;
+}
+.editBabyCategory{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    gap: 5px;
+    justify-content: center;
+}
+.editBabyContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    gap: 5px;
+    justify-content: center;
+}
+.editBabyCategory h2{
+    width: 100%;
+    height: auto;
+    text-align: right;
+    padding-right: 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.editBabyContent h2{
+    width: 100%;
+    height: auto;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.editBabyProf h2, .editBabyProf h3{
+    font-size: 15px;
+}
+.editBabyProf h4{
+    display: flex;
+    background-color: rgba(23, 217, 78, 0.24);
+    border-radius: 40px;
+    padding: 5px 15px;
+    color: var(--font-color);
+    font-weight: 500;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+}
+.editBabies{
+    color: #002768;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: sticky;
+    border-top: var(--border);
+    margin-top: 30px;
+    top: 0;
+    z-index: 1;
+}
+.editBabies :where(h3){
+    display: flex;
+    color: #002768;
+    font-weight: 600;
+    font-size: 25px;
+    gap: 7px;
+}
+.editBabies :where(span, h4){
+    display: flex;
+    color: #002768;
+    font-weight: 500;
+    font-size: 18px;
+    gap: 7px;
+}
+.editBabies div{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 18px;
+}
+.popupContent a{
+    padding: 15px 20px;
+    background-color: #002768;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 20px 115px 40px 235px;
+}
+
+/* ----- popup feeds ----- */
+
+.popupEditfeeds{
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+
+.editfeeds{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.editfeeds img{
+    display: flex;
+    height: 100px;
+    width: auto;
+}
+.editfeeds h2 {
+    font-size: 20px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 50%;
+    margin: 8px 0;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    background: #ccc;
+    border-radius: 3px;
+    border: none;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 32px;
+    height: 32px;
+    background: #002768;
+    border-radius: 10px;
+    border: 2px solid #002768;
+    margin-top: -13px;
+    position: relative;
+}
+  
+
+#feedAmount::-moz-range-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+  
+#feedAmount::-webkit-slider-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.editfeeds #enterButton{
+    padding: 15px 20px;
+    background-color: #002768;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 20px 115px 40px 115px;
+}
+
+/* ----- popup water ----- */
+
+.popupEditwater{
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.editwater{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.editwater img{
+    display: flex;
+    height: 100px;
+    width: auto;
+}
+.editwater h2 {
+    font-size: 20px;
+}
+
+
+#waterAmount::-moz-range-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+  
+#waterAmount::-webkit-slider-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.editwater #enterButton{
+    padding: 15px 20px;
+    background-color: #002768;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 20px 115px 40px 115px;
+}
+
+/* ----- popup milk ----- */
+
+.popupEditmilk{
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.editmilk{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.editmilk img{
+    display: flex;
+    height: 100px;
+    width: auto;
+}
+.editmilk h2 {
+    font-size: 20px;
+}
+
+
+#milkAmount::-moz-range-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+  
+#milkAmount::-webkit-slider-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.editmilk #enterButton{
+    padding: 15px 20px;
+    background-color: #002768;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 20px 115px 40px 115px;
+}
+  
+/* ----- popup vitamin ----- */
+
+.popupEditvitamin{
+    background: rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.editvitamin{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+}
+
+.editvitamin img{
+    display: flex;
+    height: 100px;
+    width: auto;
+}
+.editvitamin h2 {
+    font-size: 20px;
+}
+
+
+#vitaminAmount::-moz-range-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+  
+#vitaminAmount::-webkit-slider-thumb::after {
+    content: attr(value) " lbs";
+    position: absolute;
+    top: -30px;
+    left: -5px;
+    font-size: 12px;
+    color: #666;
+}
+
+.editvitamin #enterButton{
+    padding: 15px 20px;
+    background-color: #002768;
+    color: #ffffff;
+    border-radius: 15px;
+    margin: 20px 115px 40px 115px;
+}
