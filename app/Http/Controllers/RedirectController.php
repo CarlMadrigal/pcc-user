@@ -19,7 +19,7 @@ class RedirectController extends Controller
                 'carabaos' => $carabao
             ]);
         }       
-        return view('login');
+        return view('landing');
     }
 
     function redirectToSignUppage(){
@@ -28,7 +28,15 @@ class RedirectController extends Controller
             'coopheads' => $coophead
         ]);
     }
+
+    function redirectToPortalpage(Request $request){
+        return view('landing');
+    }
     
+    function redirectToSignInpage(Request $request){
+        return view('login');
+    }
+
     function redirectToContractsPage(Request $request){
         return view('mycontracts');
     }

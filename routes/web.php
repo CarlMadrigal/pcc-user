@@ -22,9 +22,13 @@ use App\Http\Controllers\ConcernController;
 
 Route::get('/', [RedirectController::class, 'redirectToHomepage']);
 
+Route::get('/portal', [RedirectController::class, 'redirectToPortalpage']);
+
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::get('/signin', [RedirectController::class, 'redirectToSignInpage']);
 
 Route::get('/signup', [RedirectController::class, 'redirectToSignUppage']);
 
