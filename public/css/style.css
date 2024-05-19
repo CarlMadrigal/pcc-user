@@ -1,165 +1,130 @@
-* {
+*{
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
+ 
 }
 
-body {
+body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f2f5;
+    padding: auto;
     position: relative;
+    
 }
-/* ----- sneaking cow ----- */
-.admin-pic {
+
+.admin-pic{
     position: absolute;
-    left: 356px;
-    bottom: 249px;
+    left: 425px;
     width: 350px;
     z-index: 9999;
 }
-/* --- background ----- */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    padding: 20px;
-    border-radius: 25px;
-    margin-left: 250px;
-}
-
-.form-wrapper {
-    display: flex;
-    background-color: #fff;
-    border-radius: 20px 20px 20px 20px;
-    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.08);
-    overflow: hidden;
-    position: relative;
-}
-
-.form-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background-color: #ECEEF6;
-}
-
-.wrapper {
+.wrapper{
     width: 400px;
+    height: 100%;
     padding: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: 40px;
+    display: block;
+    justify-content: space-evenly;
+    justify-content: right;
+    align-items: right;
+    background-color: #fff;
     text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.08);
+    
 }
-/* ---login--- */
-.login-form {
-    background-color: #fff;
-    height: auto;
-    width: 400px;
-    border-radius: 25px 0 0 0;
-}
+.wrapper .mainLogo{
+    position: relative;
+    display: block;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    color: #283A8C;
 
-.register-form {
-    background-color: #fff;
 }
-
-.mainLogo {
-    margin-bottom: 20px;
-}
-
-.mainLogo img {
-    width: 120px;
-    margin-bottom: 10px;
-}
-
-.mainLogo h1 {
+.wrapper .mainLogo h1{
+    padding-top: 10px;
     font-weight: 500;
     font-size: 36px;
-    color: #283A8C;
+    text-align: center;
+}
+.wrapper .logo{
+    width: 120px;
+    margin:0;
+    padding: 0;
 }
 
-.input-box,
-.inputBox {
+.wrapper .input-box{
     position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.input-box input,
-.inputBox input {
     width: 100%;
     height: 50px;
-    padding: 0 45px 0 20px;
-    border: 2px solid #ECEEF6;
+    margin: 20px 0;
     border-radius: 25px;
-    font-size: 16px;
-    background-color: transparent;
-    outline: none;
-    transition: border 0.5s;
+    
 }
-
-.input-box i,
-.inputBox i {
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 20px 45px 20px 20px;
+    outline: none;
+    border: none;
+    border: 2px solid #ECEEF6;
+    transition: .5s ;
+}
+.input-box i{
     position: absolute;
+    font-size: 20px;
     right: 10px;
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
+    transform: translate(-50%, -50%);
 }
 
-.input-box input:hover,
-.inputBox input:hover,
-.input-box input:focus,
-.inputBox input:focus {
-    border: 2.5px solid #283A8C;
-    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.2);
-    transition: border 0.5s, box-shadow 1s;
-}
-
-.remember-forgot,
-.Remember-Forgot {
-    width: 100%;
+.wrapper .remember-forgot{
+    font-size: 16px;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    font-size: 16px;
-    margin-bottom: 20px;
+    padding: 20px 0;
 }
 
-.remember-forgot a,
-.Remember-Forgot a {
-    color: black;
-    text-decoration: none;
+.remember-forgot a{
     position: relative;
+    text-decoration: none;
+    color: black;
+    
 }
-
-.remember-forgot a::after,
-.Remember-Forgot a::after {
+.remember-forgot a::after{
     content: '';
     position: absolute;
-    top: 20px;
-    left: 0px;
     width: 0%;
     height: 2px;
     background-color: #283A8C;
-    transition: width 0.5s;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
 }
-
-.remember-forgot a:hover::after,
-.Remember-Forgot a:hover::after {
+.remember-forgot a:hover::after{
+    color: #283A8C;
     width: 100%;
 }
+.text-box{
+    position: absolute;
+    width: 90%;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
 
-.btn {
+.wrapper .btn{
     width: 100%;
     height: 50px;
     border-radius: 25px;
@@ -169,13 +134,203 @@ body {
     background-color: #E9EBF1;
     outline: none;
     border: none;
-    transition: background-color 0.5s, color 0.5s;
+    transition: 0.5s;
 }
-
-.btn:hover {
+.wrapper .btn:hover{
     color: #fff;
     background: #283A8C;
+    
 }
 
+.input-box input:hover{
+    border: 2.5px solid #283A8C;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.2s);
+    transition: 1s;
+}
 
-/* aldrin di ko padin talaga mabago yung sa icons ng tao, di ko alam bat ayaw mapalitan HAHAHAHAHA */
+.input-box input:focus,
+.input-box input:active{
+    border: 2.5px solid #283A8C;
+}
+
+/* ----------------------- Register ----------------------- */
+
+.register{
+    width: 400px;
+    height: 100%;
+    padding: 35px;
+    margin-left: 40px;
+    display: block;
+    justify-content: space-evenly;
+    justify-content: right;
+    align-items: right;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.08);
+    
+}
+.register .mainLogo{
+    position: relative;
+    display: block;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    color: #283A8C;
+
+}
+.register .mainLogo h1{
+    padding-top: 10px;
+    font-weight: 500;
+    font-size: 36px;
+    text-align: center;
+}
+.register .logo{
+    width: 120px;
+    margin:0;
+    padding: 0;
+}
+
+.register .inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    border-radius: 25px;
+
+}
+
+.register .dropdown-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+    border-radius: 25px;
+}
+
+.dropdown-box select {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 0 45px 0 20px;
+    border: 2px solid #ECEEF6;
+    appearance: none;
+    transition: .5s;
+    cursor: pointer;
+
+}
+.dropdown-box::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    right: 23px;
+    top: 55%;
+    transform: rotate(45deg);
+    margin-top: -9px;
+    pointer-events: none;
+
+}
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 20px 45px 20px 20px;
+    outline: none;
+    border: none;
+    border: 2px solid #ECEEF6;
+    transition: .5s ;
+}
+.inputBox i{
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.register .Remember-Forgot{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.Remember-Forgot a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    
+}
+.Remember-Forgot a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #283A8C;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.Remember-Forgot a:hover::after{
+    color: #283A8C;
+    width: 100%;
+}
+.text-box{
+    position: absolute;
+    width: 90%;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+
+.register .btn{
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #E9EBF1;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+}
+.register .btn:hover{
+    color: #fff;
+    background: #283A8C;
+    
+}
+
+.inputBox input:hover{
+    border: 2.5px solid #283A8C;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.2s);
+    transition: 1s;
+}
+
+.inputBox input:focus,
+.inputBox input:active{
+    border: 2.5px solid #283A8C;
+}
+
+.dropdown-box select:hover{
+    border: 2.5px solid #283A8C;
+    box-shadow: 0px 0px 40px 4px rgba(3, 39, 102, 0.2s);
+    transition: 1s;
+}
+
+.dropdown-box select:focus,
+.dropdown-box select:active{
+    border: 2.5px solid #283A8C;
+}

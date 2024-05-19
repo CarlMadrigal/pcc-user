@@ -51,55 +51,15 @@
 
         <!-- Content -->
         <div class="file-con">
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            @foreach ($files as $file)
+                <div class="files">
+                    <img src="{{asset('home-images/fileIcon.png')}}">
+                    <div class="file-details">
+                        <h3 id="fileName">{{$file->name}}</h3>
+                        <p id="fileDescription">{{$file->description}}</p>
+                    </div>
                 </div>
-            </div>
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div class="files">
-                <img src="{{asset('home-images/fileIcon.png')}}">
-                <div class="file-details">
-                    <h3 id="fileName">File name</h3>
-                    <p id="fileDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                </div>
-            </div>
+            @endforeach
         </div>            
     </div>
 

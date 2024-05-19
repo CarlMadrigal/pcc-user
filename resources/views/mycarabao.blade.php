@@ -46,7 +46,7 @@
                     <span class="material-symbols-rounded">search</span>
                 </div>
                 <a href="#"><p>Add Carabao</p><span class="material-symbols-rounded">add</span></a>
-                <a id="backBtn"><span class="material-symbols-rounded">medication</span></a>
+                <a id="showPopupConcerns"><span class="material-symbols-rounded">medication</span></a>
             </div>
         </div>
         
@@ -67,6 +67,33 @@
         </div>
     </div>
 
+     <!-- popup concerns -->
+     <div class="popupConcerns hidden" id="popupConcerns">
+        <form action="/concerns/create" method="POST" class="popupContent2">
+            @csrf
+            <input type="text" name="id" value="{{auth()->user()->id}}" style="display: none;">
+            <div class="popupTop">
+                <h1>Concerns</h1>
+            </div>
+            <div class="userProf">
+                <img src="{{asset('home-images/profile.jpg')}}" alt="Profile Picture">
+                <h2>{{auth()->user()->name}}</h2>
+            </div>
+            <div class="concernsContent">
+                <h2>Email:</h2>
+                <input type="text" id="emailConcerns" name="recipient" class="editable popupInput">
+                <textarea name="message" id="userconcerns"></textarea>
+            </div>
+            <div class="popupButtons">
+                <button type="button" id="closePopupConcerns" class="discardBtn">Discard</button>
+                <button type="submit" class="sendBtn">Send</button>
+            </div>
+            </div>
+            <a href="#">Done</a>
+        </form>
+    </div>
+
+    <script src="{{asset('js/concerns.js')}}"></script>
 
 </body>
 </html>

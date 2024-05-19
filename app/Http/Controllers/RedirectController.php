@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Upload;
 use App\Models\Carabao;
 use App\Models\Cooperative;
 use App\Models\Notification;
@@ -18,8 +19,12 @@ class RedirectController extends Controller
                 'carabaos' => $carabao
             ]);
         }       
+        return view('login');
+    }
+
+    function redirectToSignUppage(){
         $coophead = Cooperative::all();
-        return view('login', [
+        return view('register', [
             'coopheads' => $coophead
         ]);
     }
@@ -29,7 +34,10 @@ class RedirectController extends Controller
     }
     
     function redirectToFilePage(Request $request){
-        return view('fileContainer');
+        $files = Upload::where('cooperative_id', Auth::user()->cooperative->id)->orWhere('cooperative_id', null)->orderBy('created_at', 'desc')->get();
+        return view('fileContainer', [
+            'files' => $files
+        ]);
     }
 
     function redirectToCarabaoPage(Request $request){

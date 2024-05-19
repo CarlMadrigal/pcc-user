@@ -135,34 +135,36 @@
                         </div>
                     </div>
                     <!-- Additional tasks -->
-                    <div class="tasks">
-                        @if($carabao->todayNeed() == null || $carabao->todayNeed()->milk == null)
-                        <div class="checkbox2" id="taskCheckbox2">
-                            <label for="taskCheckbox"><span class="material-symbols-rounded">task_alt</span></label>
-                        </div>
-                        @elseif($carabao->todayNeed()->milk != null)
-                        <div class="checkbox2 checked" id="taskCheckbox2">
-                            <label for="taskCheckbox"><span class="material-symbols-rounded">task_alt</span></label>
-                        </div>
-                        @endif
-                        <div class="taskInfo milk" id="editmilk">
-                            <h4>Milking</h4>
-                            <div>
-                                <div class="amount">
-                                    <h5>1-4 gal.</h5>
-                                    <h6>Daily</h6>
-                                </div>
-                                <div class="time">
-                                    <span class="material-symbols-rounded">schedule</span>
-                                    <div class="quant">
-                                        <h5>2 times</h5>
+                    @if ($carabao->status == 'Pregnant')
+                        <div class="tasks">
+                            @if($carabao->todayNeed() == null || $carabao->todayNeed()->milk == null)
+                            <div class="checkbox2" id="taskCheckbox2">
+                                <label for="taskCheckbox"><span class="material-symbols-rounded">task_alt</span></label>
+                            </div>
+                            @elseif($carabao->todayNeed()->milk != null)
+                            <div class="checkbox2 checked" id="taskCheckbox2">
+                                <label for="taskCheckbox"><span class="material-symbols-rounded">task_alt</span></label>
+                            </div>
+                            @endif
+                            <div class="taskInfo milk" id="editmilk">
+                                <h4>Milking</h4>
+                                <div>
+                                    <div class="amount">
+                                        <h5>1-4 gal.</h5>
                                         <h6>Daily</h6>
                                     </div>
+                                    <div class="time">
+                                        <span class="material-symbols-rounded">schedule</span>
+                                        <div class="quant">
+                                            <h5>2 times</h5>
+                                            <h6>Daily</h6>
+                                        </div>
+                                    </div>
+                                    <img src="{{asset('home-images/milk.png')}}" alt="">
                                 </div>
-                                <img src="{{asset('home-images/milk.png')}}" alt="">
                             </div>
                         </div>
-                    </div>
+                    @endif
                     <!-- Additional tasks -->
                     <div class="tasks">
                         @if($carabao->todayNeed() == null || $carabao->todayNeed()->vitamin == null)
@@ -249,10 +251,10 @@
                 <input type="text" name="name" id="carabaoNameEdit" class="editable popupInput" value="{{$carabao->name}}">
                 <input type="text" name="id" id="carabaoID" class="editable popupInput" value="#{{$carabao->id}}" readonly>
                 <select name="status" id="sltStatus" class="editable popupInput">
-                    <option disabled selected id="healthy">Healthy</option>
-                    <option value="pregnant" id="pregnant">Pregnant</option>
-                    <option value="sick" id="sick">Sick</option>
-                    <option value="dead" id="dead">Dead</option>
+                    <option value="Healthy" id="healthy">Healthy</option>
+                    <option value="Pregnant" id="pregnant">Pregnant</option>
+                    <option value="Sick" id="sick">Sick</option>
+                    <option value="Dead" id="dead">Dead</option>
                 </select>
             </div>
             <div class="carabaoInfo">
@@ -264,11 +266,11 @@
                     <h2>Weight:</h2>
                 </div>
                 <div class="carabaoContent">
-                    <input type="text" id="carabaoBreed" class="editable popupInput" value="{{$carabao->breed}}">
-                    <input type="text" id="carabaoGender" class="editable popupInput" value="Female">
+                    <input type="text" id="carabaoBreed" class="editable popupInput" value="{{$carabao->breed}}" readonly>
+                    <input type="text" id="carabaoGender" class="editable popupInput" value="Female" readonly>
                     <input type="text" id="carabaoAge" class="editable popupInput" value="3 Months">
-                    <input type="text" id="carabaoDOB" class="editable popupInput" value="Dec. 03, 2023">
-                    <input type="text" id="carabaoWeight" class="editable popupInput" value="{{$carabao->weight}}">
+                    <input type="text" id="carabaoDOB" class="editable popupInput" value="Dec. 03, 2023" readonly>
+                    <input type="text" name="weight" id="carabaoWeight" class="editable popupInput" value="{{$carabao->weight}}">
                 </div>
             </div>
             <div class="editBabies">
@@ -372,7 +374,7 @@
         </div>
     </form>
     <form action="/need/milk/update" method="POST" class="popupEditmilk">
-        @csrf
+        @csrf   
         <div class="popupContent">
             <div class="popupTop">
                 <h1>Milking</h1>

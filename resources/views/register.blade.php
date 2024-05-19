@@ -15,36 +15,58 @@
 </head>
 <body>
     <img src="{{asset('login-images/sneak.png')}}" class="admin-pic">
-    <div class="wrapper">
-        <form action="/login" method="POST">
+    <div class="register">
+        <form action="/register" method="POST">
             @csrf
             <div class="mainLogo">
                 <img src="{{asset('login-images/logo.png')}}" class="logo" width="300px">
-                <h1>Login</h1>
+                <h1>Register</h1>
+            </div>
+
+            <div class="inputBox">
+                <input type="text" placeholder="Name" name="name" value="{{ old('name') }}" required>
+                <i class='bx bx-user' ></i>
+                <box-icon name='user'></box-icon>
             </div>
             
-            <div class="input-box">
+            <div class="inputBox">
+                <input type="email" placeholder="Email" name="email" value="{{ old('email') }}" required>
+                <i class='bx bx-user' ></i>
+                <box-icon name='envelope' ></box-icon>
+
+            </div>  
+
+            <div class="dropdown-box">
+                <select name ="cooperative_id" id="cooperative_id" required>
+                    <option disabled selected>Select Coop Head</option>
+                    @foreach ($coopheads as $coophead)
+                        <option value="{{$coophead->id}}">{{$coophead->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+            
+            <div class="inputBox">
                 <input type="text" placeholder="Username" name="username" value="{{ old('username') }}" required>
                 <i class='bx bx-user' ></i>
                 <box-icon name='user'></box-icon>
             </div>
 
-            <div class="input-box">
+            <div class="inputBox">
                 <input type="password" placeholder="Password" name="password" required>
                 <i class='bx bx-lock' ></i>
                 <box-icon name='lock' ></box-icon>
             </div>
 
-            <div class="remember-forgot">
+            <div class="Remember-Forgot">
                 <label>
                     <input type="checkbox"> Remember me
                 </label>
                 <a href="#">Forgot password?</a>
             </div>
             <button type="submit" class="btn">
-                Log in
+                Register
             </button>
         </form>
-    </div>
+    </div> 
 </body>
 </html>

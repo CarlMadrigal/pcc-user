@@ -12,11 +12,13 @@ class CarabaoController extends Controller
         $validator = Validator::make($request->all(), [
             'id' => 'required|exists:carabaos',
             'name' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'weight' => 'required'
         ], [
             'id.required' => 'Username is required',
             'id.exists' => 'Carabao does not exist',
             'name.required' => 'Password is required',
+            'weight.required' => 'Weight is required',
             'status.required' => 'Status is required'
         ]);
         
@@ -29,6 +31,7 @@ class CarabaoController extends Controller
 
             $carabao->name = $request->name;
             $carabao->status = $request->status;
+            $carabao->weight = $request->weight;
             $carabao->save();
 
             flash()->addSuccess('Carabao Updated Successfully');

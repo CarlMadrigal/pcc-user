@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CarabaoController;
 use App\Http\Controllers\NeedController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ConcernController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::get('/', [RedirectController::class, 'redirectToHomepage']);
 Route::post('/login', [LoginController::class, 'login']);
 
 Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::get('/signup', [RedirectController::class, 'redirectToSignUppage']);
 
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -56,3 +59,5 @@ Route::post('/need/water/update', [NeedController::class, 'updateWater']);
 Route::post('/need/milk/update', [NeedController::class, 'updateMilk']);
 
 Route::post('/need/vitamin/update', [NeedController::class, 'updateVitamin']);
+
+Route::post('/concerns/create', [ConcernController::class, 'create']);
