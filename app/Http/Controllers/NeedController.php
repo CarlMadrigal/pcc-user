@@ -11,10 +11,13 @@ class NeedController extends Controller
     public function updateFeed(Request $request){
         $validator = Validator::make($request->all(), [
             'carabao_id' => 'required|exists:carabaos,id',
+            'cooperative_id' => 'required|exists:users,id',
             'feed' => 'required|numeric',
         ], [
             'carabao_id.required' => 'Carabao ID is required',
             'carabao_id.exists' => 'Carabao does not exists',
+            'cooperative_id.required' => 'Cooperative ID is required',
+            'cooperative_id.exists' => 'Cooperative does not exists',
             'feed.required' => 'Feed is required',
             'feed.numeric' => 'Feed should be numeric',
         ]);
@@ -26,6 +29,7 @@ class NeedController extends Controller
         }
 
         $need_form = [
+            'cooperative_id' => $request->cooperative_id,
             'carabao_id' => $request->carabao_id,
             'feed' => $request->feed,
         ];
@@ -49,10 +53,13 @@ class NeedController extends Controller
     public function updateWater(Request $request){
         $validator = Validator::make($request->all(), [
             'carabao_id' => 'required|exists:carabaos,id',
+            'cooperative_id' => 'required|exists:users,id',
             'water' => 'required|numeric',
         ], [
             'carabao_id.required' => 'Carabao ID is required',
             'carabao_id.exists' => 'Carabao does not exists',
+            'cooperative_id.required' => 'Cooperative ID is required',
+            'cooperative_id.exists' => 'Cooperative does not exists',
             'water.required' => 'Water is required',
             'water.numeric' => 'Water should be numeric',
         ]);
@@ -64,6 +71,7 @@ class NeedController extends Controller
         }
 
         $need_form = [
+            'cooperative_id' => $request->cooperative_id,
             'carabao_id' => $request->carabao_id,
             'water' => $request->water,
         ];
@@ -87,14 +95,17 @@ class NeedController extends Controller
     public function updateMilk(Request $request){
         $validator = Validator::make($request->all(), [
             'carabao_id' => 'required|exists:carabaos,id',
+            'cooperative_id' => 'required|exists:users,id',
             'milk' => 'required|numeric',
         ], [
             'carabao_id.required' => 'Carabao ID is required',
             'carabao_id.exists' => 'Carabao does not exists',
+            'cooperative_id.required' => 'Cooperative ID is required',
+            'cooperative_id.exists' => 'Cooperative does not exists',
             'milk.required' => 'Milk required',
             'milk.numeric' => 'Milk should be numeric',
         ]);
-        
+    
         if($validator->fails()){
             $message = $validator->messages()->all()[0];
             flash()->addError($message);
@@ -102,6 +113,7 @@ class NeedController extends Controller
         }
 
         $need_form = [
+            'cooperative_id' => $request->cooperative_id,
             'carabao_id' => $request->carabao_id,
             'milk' => $request->milk,
         ];
@@ -125,10 +137,13 @@ class NeedController extends Controller
     public function updateVitamin(Request $request){
         $validator = Validator::make($request->all(), [
             'carabao_id' => 'required|exists:carabaos,id',
+            'cooperative_id' => 'required|exists:users,id',
             'vitamin' => 'required|numeric'
         ], [
             'carabao_id.required' => 'Carabao ID is required',
             'carabao_id.exists' => 'Carabao does not exists',
+            'cooperative_id.required' => 'Cooperative ID is required',
+            'cooperative_id.exists' => 'Cooperative does not exists',
             'vitamin.exists' => 'Vitamins is required',
             'vitamin.numeric' => 'Vitamins should be numeric',
         ]);
@@ -140,6 +155,7 @@ class NeedController extends Controller
         }
 
         $need_form = [
+            'cooperative_id' => $request->cooperative_id,
             'carabao_id' => $request->carabao_id,
             'vitamin' => $request->vitamin
         ];

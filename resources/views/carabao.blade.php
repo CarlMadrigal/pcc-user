@@ -342,6 +342,7 @@
                 <br>
                 <input type="range" id="feedAmount" name="feed" min="0" max="60" step="1" value="0">
                 <input type="text" style="display: none;" name="carabao_id" value="{{$carabao->id}}">
+                <input type="text" style="display: none;" name="cooperative_id" value="{{Auth::user()->cooperative_id}}">
                 <span id="feedAmountValue">0 lbs</span>
 
                 <button id="enterButton">Enter</button>

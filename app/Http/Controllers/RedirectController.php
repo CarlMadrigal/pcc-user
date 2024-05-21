@@ -68,7 +68,7 @@ class RedirectController extends Controller
     }
 
     function redirectToNotificationpage(Request $request){
-        $notif = Auth::user()->notifications()->orderBy('created_at', 'desc')->get();
+        $notif = Notification::where('user_id', Auth::user()->id)->orderBy('created_at','desc')->get();
         return view('notifications', [
             'notifs' => $notif
         ]);

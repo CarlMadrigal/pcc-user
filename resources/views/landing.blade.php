@@ -54,7 +54,7 @@
         
 
 
-        <div class="banner">
+        <div class="banner" style="background-image: url({{ asset('images/banner.png') }});">
             <div class="see-more">
                 <h1>MOO-VING FORWARD TOGETHER</h1>
                 <p>"Empowering farmers, enriching<br>

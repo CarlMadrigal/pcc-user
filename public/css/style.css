@@ -18,7 +18,7 @@ body{
 
 .admin-pic{
     position: absolute;
-    left: 425px;
+    left: 475px;
     width: 350px;
     z-index: 9999;
 }

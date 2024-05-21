@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Need;
 use App\Models\User;
 use App\Models\Notification;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -45,6 +46,13 @@ class RegisterController extends Controller
                 'role' => 'user'
             ];
             User::create($user_form);
+
+            $notification = [
+                'cooperative_id' => $request->cooperative_id,
+                'title' => 'New User Added',
+                'message' => $request->name.' has been Successfully Created and Added.',
+            ];
+            Notification::create($notification);
             
             flash()->addSuccess('User Successfully Registered');
             return back();

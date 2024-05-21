@@ -611,7 +611,7 @@ button:hover{
 .helpSearch{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
     width: 100%;
     height: auto;
@@ -650,7 +650,7 @@ button:hover{
 }
 .helpSearch .helpSearchBar span{
     position: absolute;
-    right: 630px;
+    right: 690px;
     color: white;
 }
 

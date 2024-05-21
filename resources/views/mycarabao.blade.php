@@ -89,7 +89,6 @@
                 <button type="submit" class="sendBtn">Send</button>
             </div>
             </div>
-            <a href="#">Done</a>
         </form>
     </div>
 
